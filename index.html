@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Jogo da Velha</h1>
+
+    <p id="status" class="status">Vez do jogador X</p>
+    <div id="poderes">
+      <div id="direita">
+        <b>Poder do Jogador X:</b>
+        <div class="poder">
+          <span id="poderAtivadoX" class="poderDesativado">Desativado</span>
+          <span id="poderUsadoX" class="poderNaoUsado">Não Utilizado</span>
+      </div>
+      </div>
+      <div id="esquerda">
+        <b>Poder do Jogador O:</b>
+        <div class="poder">
+          <span id="poderAtivadoO" class="poderDesativado">Desativado</span>
+          <span id="poderUsadoO" class="poderNaoUsado">Não Utilizado</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tabuleiro" id="tabuleiro">
+
+      <svg class="lines">
+
+        <line id="top" class="win-line"
+          x1="25" y1="50"
+          x2="285" y2="50" />
+
+        <line id="middle" class="win-line"
+          x1="25" y1="155"
+          x2="285" y2="155" />
+
+        <line id="bottom" class="win-line"
+          x1="25" y1="260"
+          x2="285" y2="260" />
+
+        <line id="left" class="win-line"
+          x1="50" y1="25"
+          x2="50" y2="285" />
+
+        <line id="center" class="win-line"
+          x1="155" y1="25"
+          x2="155" y2="285" />
+
+        <line id="right" class="win-line"
+          x1="260" y1="25"
+          x2="260" y2="285" />
+
+        <line id="diag1" class="win-line"
+          x1="30" y1="30"
+          x2="280" y2="280" />
+
+        <line id="diag2" class="win-line"
+          x1="275" y1="35"
+          x2="40" y2="275" />
+      </svg>
+
+
+      <div id="celula00" class="celula" data-index="0"></div>
+      <div id="celula01" class="celula" data-index="1"></div>
+      <div id="celula02" class="celula" data-index="2"></div>
+      <div id="celula10" class="celula" data-index="3"></div>
+      <div id="celula11" class="celula" data-index="4"></div>
+      <div id="celula12" class="celula" data-index="5"></div>
+      <div id="celula20" class="celula" data-index="6"></div>
+      <div id="celula21" class="celula" data-index="7"></div>
+      <div id="celula22" class="celula" data-index="8"></div>
+
+    </div>
+
+    <button id="reiniciar">Reiniciar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

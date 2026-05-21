@@ -1,0 +1,248 @@
+:root {
+  --cor-jogador-atualX: white;
+  --cor-jogador-atualO: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f2f2f2;
+  background-image:url("/4532221-ilustracao-em-tic-tac-toe-seamless-background-on-dark-blue-vector-illustration-vetor.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  zoom: 1.5;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: #ffff00;
+  margin-bottom: 20px;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 3rem;
+  text-align: center;
+  animation: tituloNeon 3s infinite;
+}
+
+@keyframes tituloNeon {
+  0% {
+    color: #ff005d;
+    text-shadow: 0 0 10px #ff005d, 0 0 20px #ff005d;
+  }
+
+  20% {
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+  }
+
+  40% {
+    color: #39ff14;
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  }
+
+  60% {
+    color: #fff700;
+    text-shadow: 0 0 10px #fff700, 0 0 20px #fff700;
+  }
+
+  80% {
+    color: #bc13fe;
+    text-shadow: 0 0 10px #bc13fe, 0 0 20px #bc13fe;
+  }
+
+  100% {
+    color: #ff005d;
+    text-shadow: 0 0 10px #ff005d, 0 0 20px #ff005d;
+  }
+}
+
+#status {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.tabuleiro {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+
+  gap: 5px;
+
+  justify-content: center;
+  margin-bottom: 20px;
+
+  position: relative;
+}
+
+.celula {
+  background-color: white;
+  border: 2px solid #333;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.celula:hover {
+  background-color: #b6b6b6;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  animation: girar3D 3s infinite linear;
+  transform-style: preserve-3d;
+  transition: background-color 1s, color 1s;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+@keyframes girar3D {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+#celula00 {
+  border-left: 0;
+  border-top: 0;
+}
+
+#celula01 {
+  border-top: 0;
+}
+
+#celula02 {
+  border-right: 0;
+  border-top: 0;
+}
+
+#celula10 {
+  border-left: 0;
+}
+
+#celula12 {
+  border-right: 0;
+}
+
+#celula20 {
+  border-left: 0;
+  border-bottom: 0;
+}
+
+#celula21 {
+  border-bottom: 0;
+}
+
+#celula22 {
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.win-line {
+  stroke: red;
+  stroke-width: 10;
+
+  opacity: 0;
+
+  transition: 0.3s;
+}
+
+.lines {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+#poderes {
+  margin-bottom: 20px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+hr {
+  height: 5px;
+  background-color: black;
+}
+
+#direita {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 2px solid black;
+  background-color: var(--cor-jogador-atualX);
+}
+
+#esquerda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--cor-jogador-atualO);
+}
+
+.poder {
+  display: flex;
+  flex-direction: column;
+}
+
+.poderAtivado, .poderUsado {
+  color: gold;
+}
+
+.poderDesativado, .poderNaoUsado {
+  color: gray;
+}
+
+.celulas {
+  display: flex;
+}
+
+.status.vitoria {
+  animation: textoVitoria 2s ease;
+}
+
+@keyframes textoVitoria {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
