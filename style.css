@@ -12,7 +12,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f2f2f2;
-  background-image:url("/4532221-ilustracao-em-tic-tac-toe-seamless-background-on-dark-blue-vector-illustration-vetor.jpg");
+  background-image:url("./img/4532221-ilustracao-em-tic-tac-toe-seamless-background-on-dark-blue-vector-illustration-vetor.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
